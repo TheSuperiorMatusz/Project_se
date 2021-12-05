@@ -1,6 +1,7 @@
 <template>
-  <button @click="emitClick">
+  <button>
     {{ text }}
+    <fa v-if="icon" :icon="icon" />
   </button>
 </template>
 
@@ -10,11 +11,10 @@ export default {
     text: {
       type: String,
       default: ''
-    }
-  },
-  methods: {
-    emitClick () {
-      this.$emit('eclick')
+    },
+    icon: {
+      type: Array,
+      default: null
     }
   }
 }
