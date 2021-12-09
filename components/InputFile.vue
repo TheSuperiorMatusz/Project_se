@@ -81,6 +81,7 @@ export default {
         this.url = URL.createObjectURL(file)
         this.name = file.name
         this.file = file
+        this.$emit('set', { file: this.file, url: this.url })
       } catch (e) {
         this.url = null
         this.name = null
