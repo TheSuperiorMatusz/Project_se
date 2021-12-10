@@ -26,7 +26,6 @@ export default {
   methods: {
     handlePhotoChange (value) {
       this.image = value
-      // this.result = this.checkPhoto(value)
     },
     checkPhoto (photo) {
       return Math.random() < 0.5
