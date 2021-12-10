@@ -1,5 +1,5 @@
 <template>
-  <button>
+  <button :disabled="disabled">
     {{ text }}
     <fa v-if="icon" :icon="icon" />
   </button>
@@ -15,6 +15,10 @@ export default {
     icon: {
       type: Array,
       default: null
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   }
 }

@@ -44,6 +44,10 @@ export default {
     id: {
       type: String,
       default: 'input-file'
+    },
+    edit: {
+      type: Object,
+      default: null
     }
   },
   data () {
@@ -52,6 +56,11 @@ export default {
       size: null,
       file: null,
       name: null
+    }
+  },
+  watch: {
+    edit () {
+      this.getFileInfo(this.edit)
     }
   },
   methods: {
