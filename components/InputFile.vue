@@ -20,8 +20,18 @@
         alt="obrazek"
       >
       <!-- z tego labela zrob ten element w figmie ktory jest pustym prostokątem i na niego masz upuscic obrazek -->
-      <label v-else :for="id">
-        kliknij /  upuść tutaj
+      <label v-else :for="id" class="cos">
+        <div id="cloud">
+          <fa :icon="['fas', 'cloud-download-alt']" />
+        </div>
+        Drop your image here
+        <br>
+        <h4>
+          OR
+        </h4>
+        <div id="browse">
+          Browse files
+        </div>
       </label>
       <div style="opacity: 0; position: absolute; pointer-events: none;">
         <input
