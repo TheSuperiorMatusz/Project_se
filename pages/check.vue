@@ -7,9 +7,11 @@
       <template v-else>
         <!-- @MACIEJ tutaj wstaw nowy komponent, do ktorego np. przeslesz rozny tekst i typ (success, fail) zaleznie od zmiennej result. Ma wyswietlac czy jest kotek czy nie -->
         <!-- @temp -->
-        {{ result }}
-        <Button text="TRY AGAIN" :icon="['fas', 'redo']" @click.native="getResult" />
-        <Button text="PICK ANOTHER" :icon="['fas', 'arrow-right']" @click.native="clear" />
+        <Result :result="result" />
+        <div id="buttons">
+          <Button id="again" text="TRY AGAIN" :icon="['fas', 'redo']" @click.native="getResult" />
+          <Button id="con" text="PICK ANOTHER" :icon="['fas', 'arrow-right']" @click.native="clear" />
+        </div>
       </template>
     </div>
   </main>
