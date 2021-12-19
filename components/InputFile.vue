@@ -40,6 +40,9 @@
           @change="onFileChange"
         >
       </div>
+      <p v-if="showError">
+        Akceptowane rozszerzenia to: jpg, jpeg, png
+      </p>
     </div>
   </div>
 </template>
@@ -65,7 +68,8 @@ export default {
       url: null,
       size: null,
       file: null,
-      name: null
+      name: null,
+      showError: false
     }
   },
   watch: {
@@ -96,15 +100,23 @@ export default {
       document.getElementById(this.id).click()
     },
     getFileInfo (file) {
-      try {
-        this.url = URL.createObjectURL(file)
-        this.name = file.name
-        this.file = file
-        this.$emit('set', { file: this.file, url: this.url })
-      } catch (e) {
-        this.url = null
-        this.name = null
-        this.file = null
+      const acceptedExtensions = ['jpg', 'jpeg', 'png']
+      const name = file.name
+      let extension = name.split('.')[name.split('.').length - 1]
+      extension = extension.toLowerCase()
+      if (acceptedExtensions.includes(extension)) {
+        try {
+          this.url = URL.createObjectURL(file)
+          this.name = file.name
+          this.file = file
+          this.$emit('set', { file: this.file, url: this.url })
+        } catch (e) {
+          this.url = null
+          this.name = null
+          this.file = null
+        }
+      } else {
+        this.showError = true
       }
     }
   }
