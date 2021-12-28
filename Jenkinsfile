@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node'  
+            image 'node:16'  
         }
     }
     environment {
@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install --production'
+                sh 'npm install' 
                 sh 'npm run build'
             }
         }
@@ -22,11 +22,11 @@ pipeline {
 					failOnError: true,
 					publishers: [
 						sshPublisherDesc(
-						configName: "frontent-deploy",
+						configName: "frontend-deploy",
 						transfers: [
-							sshTransfer(sourceFiles: '**/*', excludes:'**/npm_modules/**'),
+							sshTransfer(sourceFiles: '**/*', excludes:'**/node_modules/**'),
 							sshTransfer(execCommand: """cd /var/www/html \
-                                                    && npm install --production \
+                                                    && npm install \
 													&& npm run build""")
 						],
 						verbose: true
@@ -34,7 +34,7 @@ pipeline {
 					]
 				)
 
-			// discordSend description: "Jenkins Pipeline Build", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/921884411178418187/3st2Z5P9mxJnI2haY7eB9Pipwt8jn5noi8jm5AOt53B2DoxoxWaKVXXV0Dw5hmY91Da-"
+			discordSend description: "Jenkins Pipeline Build", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/921884411178418187/3st2Z5P9mxJnI2haY7eB9Pipwt8jn5noi8jm5AOt53B2DoxoxWaKVXXV0Dw5hmY91Da-"
 			}
 		}
     }
