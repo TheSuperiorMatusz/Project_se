@@ -24,7 +24,7 @@ pipeline {
 						sshPublisherDesc(
 						configName: "frontend-deploy",
 						transfers: [
-							sshTransfer(sourceFiles: '**/*', excludes:'**/node_modules/**', excludes:'**/.npm/**'),
+							sshTransfer(sourceFiles: '**/*', excludes:'**/node_modules/**, **/.npm/**'),
 							sshTransfer(execCommand: """cd /var/www/html \
                                                     && npm install \
 													&& npm run build""")
