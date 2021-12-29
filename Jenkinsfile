@@ -34,7 +34,7 @@ pipeline {
 					]
 				)
 
-			//discordSend description: "Jenkins Pipeline Build", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/921884411178418187/3st2Z5P9mxJnI2haY7eB9Pipwt8jn5noi8jm5AOt53B2DoxoxWaKVXXV0Dw5hmY91Da-"
+			discordSend description: "Jenkins Pipeline Build", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "https://discord.com/api/webhooks/921884411178418187/3st2Z5P9mxJnI2haY7eB9Pipwt8jn5noi8jm5AOt53B2DoxoxWaKVXXV0Dw5hmY91Da-"
 			}
 		}
     }
