@@ -31,7 +31,8 @@ export default {
       this.image = value
     },
     checkPhoto (photo) {
-      return Math.random() < 0.5
+      // let formData = new FormData();
+      // formData.append('')
     },
     clear () {
       this.image = null
