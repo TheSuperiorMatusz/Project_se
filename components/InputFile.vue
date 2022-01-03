@@ -6,7 +6,6 @@
     </label>
     <div
       class="image-container"
-      @click="changeFile"
       @dragover="(event) => {
         event.preventDefault();
       }"
@@ -59,7 +58,7 @@ export default {
       default: 'input-file'
     },
     edit: {
-      type: Object,
+      type: File,
       default: null
     }
   },
@@ -74,7 +73,15 @@ export default {
   },
   watch: {
     edit () {
-      this.getFileInfo(this.edit)
+      if (this.edit) {
+        this.getFileInfo(this.edit)
+      } else {
+        this.url = null
+        this.file = null
+        this.size = null
+        this.name = null
+        this.showError = false
+      }
     }
   },
   methods: {
@@ -96,9 +103,9 @@ export default {
     onFileChange (event) {
       this.getFileInfo(event.target.files[0])
     },
-    changeFile () {
-      document.getElementById(this.id).click()
-    },
+    // changeFile () {
+    // document.getElementById(this.id).click()
+    // },
     getFileInfo (file) {
       const acceptedExtensions = ['jpg', 'jpeg', 'png']
       const name = file.name
