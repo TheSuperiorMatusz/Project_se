@@ -37,11 +37,7 @@ export const actions = {
   file: ({ commit, rootState, state, dispatch }, params) => {
     // eslint-disable-next-line
     return new Promise(async (resolve, reject) => {
-      const headers = {
-        headers: params[2] && params[2].guest ? { url: `${params[0]}` } : { Authorization: `Bearer ${rootState.auth.token}`, url: `${params[0]}` }
-      }
-
-      const request = await axios.post(`${state.url}/api/store${params[0]}`, params[1], headers).catch((error) => {
+      const request = await axios.post(`${state.url}${params[0]}`, params[1]).catch((error) => {
         dispatch('error', error.response)
       })
 

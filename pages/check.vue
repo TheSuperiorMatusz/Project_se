@@ -30,9 +30,12 @@ export default {
     handlePhotoChange (value) {
       this.image = value
     },
-    checkPhoto (photo) {
-      // let formData = new FormData();
-      // formData.append('')
+    async checkPhoto (photo) {
+      const formData = new FormData()
+      formData.append('file', photo.file)
+
+      const res = await this.$store.dispatch('axios/file', ['/image/check', formData])
+      return res
     },
     clear () {
       this.image = null
