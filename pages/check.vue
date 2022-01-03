@@ -32,7 +32,7 @@ export default {
     },
     async checkPhoto (photo) {
       const formData = new FormData()
-      formData.append('file', photo.file)
+      formData.append('image', photo.file)
 
       const res = await this.$store.dispatch('axios/file', ['/image/check', formData])
       return res

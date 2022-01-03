@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const state = () => {
   return {
-    url: 'https://161.35.216.122'
+    url: 'http://161.35.216.122/api'
   }
 }
 
