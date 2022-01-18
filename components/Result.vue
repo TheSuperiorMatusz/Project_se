@@ -1,7 +1,7 @@
 <template>
   <div v-if="result" id="true">
     <fa :icon="['fas', 'check-circle']" />
-    CORRECTS, THAT'S A CAT
+    CORRECT, THAT'S A CAT
     <fa :icon="['fas', 'check-circle']" />
   </div>
   <div v-else id="false">

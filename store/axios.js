@@ -37,9 +37,7 @@ export const actions = {
   file: ({ commit, rootState, state, dispatch }, params) => {
     // eslint-disable-next-line
     return new Promise(async (resolve, reject) => {
-      const request = await axios.post(`${state.url}${params[0]}`, params[1]).catch((error) => {
-        dispatch('error', error.response)
-      })
+      const request = await axios.post(`${state.url}${params[0]}`, params[1])
 
       resolve(request)
     })

@@ -101,7 +101,7 @@ export default {
       }
     },
     onFileChange (event) {
-      this.getFileInfo(event.target.files[0])
+      if (event.target.files && event.target.files.length > 0) { this.getFileInfo(event.target.files[0]) }
     },
     // changeFile () {
     // document.getElementById(this.id).click()

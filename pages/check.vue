@@ -30,23 +30,19 @@ export default {
     handlePhotoChange (value) {
       this.image = value
     },
-    async checkPhoto (photo) {
-      const formData = new FormData()
-      formData.append('image', photo.file)
-
-      const res = await this.$store.dispatch('axios/file', ['/image/check', formData])
-      return res
-    },
     clear () {
       this.image = null
       this.result = null
     },
-    getResult () {
+    async getResult () {
       this.loading = true
-      setTimeout(() => {
-        this.result = this.checkPhoto(this.image)
-        this.loading = false
-      }, 1500)
+
+      const formData = new FormData()
+      formData.append('image', this.image.file)
+
+      const res = await this.$store.dispatch('axios/file', ['/image/check', formData])
+      this.result = res.data.is_cat === '1'
+      this.loading = false
     }
   }
 }
