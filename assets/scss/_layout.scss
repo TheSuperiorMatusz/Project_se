@@ -45,6 +45,8 @@ div.image-container{
     background-image:linear-gradient(rgba(0, 0, 0, 0.76),rgba(0, 0, 0, 0.80),rgba(0,0,0,0.90)),url(../../static/img/catsornot.jpg);
     background-repeat: no-repeat; 
     margin:150px 350px 100px 450px ;
+    display: flex;
+    justify-content: center;
 }
 div#cloud{
     font-size: 100px; 
@@ -61,7 +63,7 @@ div#browse{
     font-size: 50px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #f2e527;
-    margin-left: 350px;
+    margin: 0 auto;
 
 }
 h4{
