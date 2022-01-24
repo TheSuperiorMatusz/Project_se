@@ -10,7 +10,7 @@
         <Result :result="result" />
         <div id="buttons">
           <Button id="again" text="TRY AGAIN" :icon="['fas', 'redo']" @click.native="getResult" />
-          <Button id="con" text="PICK ANOTHER" :icon="['fas', 'arrow-right']" @click.native="clear" />
+          <Button id="try" text="PICK ANOTHER" :icon="['fas', 'arrow-right']" @click.native="clear" />
         </div>
       </template>
     </div>

@@ -1,0 +1,53 @@
+div.image-container{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    color: #f2e527;
+    width: 1050px;
+    height: 550px;
+    border: 5px dashed #f2e527;
+    display: inline-block;
+    text-align: center;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.76),rgba(0, 0, 0, 0.80),rgba(0,0,0,0.90)),url(../../static/img/catsornot.jpg);
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    row-gap: 10px;
+}
+div#cloud{
+    font-size: 100px; 
+}
+div.file-input{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+div#browse{
+    background-color: #5d653f;
+    height: 60px;
+    width: 330px;
+    text-align: center;
+    border-style: none solid solid none;
+    border-color: #f2e527;
+    border-radius: 5px;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #f2e527;
+    margin: 0 auto;
+
+}
+h4{
+    font-size: 35px;
+  }
+  label.file-input-label{
+    font-size: 35px;
+    color: #f2e527;
+    align-self:stretch;
+  }
+  p#error{
+    align-self: flex-end;
+    font-size: 25px;
+    color: #f2e527;
+  }

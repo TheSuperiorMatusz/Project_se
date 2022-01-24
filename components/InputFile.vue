@@ -19,7 +19,7 @@
         alt="obrazek"
       >
       <!-- z tego labela zrob ten element w figmie ktory jest pustym prostokątem i na niego masz upuscic obrazek -->
-      <label v-else :for="id" class="cos">
+      <label v-else :for="id">
         <div id="cloud">
           <fa :icon="['fas', 'cloud-download-alt']" />
         </div>
@@ -39,10 +39,10 @@
           @change="onFileChange"
         >
       </div>
-      <p v-if="showError">
+    </div>
+    <p id="error" v-if="showError">
         Akceptowane rozszerzenia to: jpg, jpeg, png
       </p>
-    </div>
   </div>
 </template>
 

@@ -1,0 +1,26 @@
+div#catornot{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.726),rgba(0, 0, 0, 0.767)),url(../../static/img/catsornot.jpg);
+    background-repeat: no-repeat;
+    color:#f2e527;
+    width:1400px;
+    height: 788px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+div#flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  div#text{
+    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+div#test{
+    display: flex;
+    justify-content: center;
+  }

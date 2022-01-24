@@ -1,6 +1,5 @@
 <template>
-  <div id="loading">
-    <!-- @MACIEJ fajnie by bylo jakbys zrobil, ze ten loader ma duzy z-index, zajmuje 100% height i width i juz wgl by bylo super jakby sie kręciło coś -->
-    loading...
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
   </div>
 </template>
